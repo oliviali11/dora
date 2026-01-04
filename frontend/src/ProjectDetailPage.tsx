@@ -93,7 +93,7 @@ const ProjectDetailPage: React.FC = () => {
       project_id: projectId,
       query: searchQuery,
       top_k: 10,
-      rerank_top_n: 5,
+      rerank_top_n: 10,
     });
   };
 
@@ -463,7 +463,7 @@ return (
                             </span>
                             
                             {/* PROJECT RELEVANCE SCORE */}
-                            {paper.relevance_score && (
+                            {paper.relevance_score !== null && paper.relevance_score !== undefined && (
                               <span className="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full font-medium">
                                 {Math.round(paper.relevance_score)}% project fit
                               </span>
